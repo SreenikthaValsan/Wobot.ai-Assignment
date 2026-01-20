@@ -1,29 +1,38 @@
 export interface Camera {
-  id: number
+  id: string
   name: string
   location: string
-  recorder: string
-  current_status: string
-  tasks: string | number
-  status: "Active" | "Inactive"
-  health?: {
-    cloud?: string
-    device?: string
-  }
-  hasWarning?: boolean
-  email?: string
-  model?: string
+  status: "active" | "inactive" | "maintenance"
+  ip_address: string
+  model: string
+  resolution: string
+  last_updated: string
+}
+
+export interface ApiResponseData {
+  cameras: Camera[]
+  total_count: number
+  active_count: number
+  offline_count: number
+  maintenance_count: number
 }
 
 export interface ApiResponse {
-  data: Camera[]
+  status: "success" | "error"
+  data: ApiResponseData
+  timestamp: string
+  message?: string
 }
 
 export interface UpdatingStatus {
-  [key: number]: boolean
+  [key: string]: boolean
 }
 
 export interface FilterOption {
   value: string
   label: string
+}
+export interface UpdateCameraStatusRequest {
+  id: string
+  status: "Active" | "Inactive"
 }

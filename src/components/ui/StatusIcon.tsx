@@ -2,7 +2,7 @@ import NotInterestedIcon from "../../assets/not-interested.png"
 import CheckCircleOutlineIcon from "../../assets/check_circle_outline.png"
 
 interface StatusIconProps {
-  status: "Active" | "Inactive"
+  status: "Active" | "Inactive" | "Maintenance"
   isUpdating?: boolean
   onClick?: () => void
 }

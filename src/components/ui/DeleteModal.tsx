@@ -19,12 +19,12 @@ export const DeleteModal = ({
     <div className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-0">
       <div className="bg-white rounded-lg shadow-xl p-4 sm:p-6 w-full sm:w-96 max-w-full animate-in fade-in zoom-in duration-200">
         <div className="flex items-center mb-4">
-          <div className="flex-1">
+          <div className="flex-1 justify-center text-center">
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900">Delete Camera</h3>
           </div>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-6 justify-center text-center">
           <p className="text-sm sm:text-base text-gray-600">
             Are you sure you want to delete <br className="hidden sm:inline"/>
             <span className="font-semibold text-gray-900">{itemName}</span>?
@@ -32,7 +32,7 @@ export const DeleteModal = ({
           <p className="text-xs sm:text-sm text-gray-500 mt-3">This action cannot be undone.</p>
         </div>
 
-        <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-2 sm:gap-3">
+        <div className="flex flex-col-reverse sm:flex-row sm:justify-center gap-2 sm:gap-3">
           <button
             onClick={onCancel}
             disabled={isLoading}

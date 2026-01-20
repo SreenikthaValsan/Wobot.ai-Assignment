@@ -1,4 +1,5 @@
-export const API_BASE = import.meta.env.VITE_API_BASE || "https://api-app-staging.wobot.ai/app/v1"
+export const API_BASE = import.meta.env.VITE_API_BASE || "https://hiring-assignment.wobot.ai/api/v1"
+export const API_UPDATE = import.meta.env.VITE_API_UPDATE || "https://api-app-staging.wobot.ai/app/v1"
 export const AUTH_TOKEN = import.meta.env.VITE_AUTH_TOKEN || ""
 
 export const DEFAULT_ITEMS_PER_PAGE = 10

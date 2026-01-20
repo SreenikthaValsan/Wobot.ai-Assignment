@@ -81,8 +81,9 @@ cp .env.example .env
 2. Configure the environment variables in `.env`:
 
 ```dotenv
-VITE_API_BASE=https://api-app-staging.wobot.ai/app/v1
+VITE_API_BASE=https://hiring-assignment.wobot.ai/api/v1
 VITE_AUTH_TOKEN=your_authentication_token_here
+VITE_API_UPDATE= https://api-app-staging.wobot.ai/app/v1
 ```
 
 Note: Never commit `.env` files to version control.

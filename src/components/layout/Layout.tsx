@@ -21,15 +21,15 @@ export const CameraLayout = () => {
   const cameras = localCameras
   const { searchTerm, setSearchTerm, statusFilter, setStatusFilter, locationFilter, setLocationFilter, locations, filteredCameras } = useFilters(cameras)
   const { currentPage, itemsPerPage, setItemsPerPage, totalPages, startIndex, endIndex, goToFirstPage, goToPreviousPage, goToNextPage, goToLastPage } = usePagination(filteredCameras.length)
-  const [selectedCameras, setSelectedCameras] = useState<Set<number>>(new Set())
-  const [hoveredRow, setHoveredRow] = useState<number | null>(null)
+  const [selectedCameras, setSelectedCameras] = useState<Set<string>>(new Set())
+  const [hoveredRow, setHoveredRow] = useState<string | null>(null)
   const [deleteModalOpen, setDeleteModalOpen] = useState(false)
-  const [deletingCameraId, setDeletingCameraId] = useState<number | null>(null)
+  const [deletingCameraId, setDeletingCameraId] = useState<string | null>(null)
   const [deletingCameraName, setDeletingCameraName] = useState("")
 
   const currentCameras = filteredCameras.slice(startIndex, endIndex)
 
-  const handleToggleSelectCamera = (id: number) => {
+  const handleToggleSelectCamera = (id: string) => {
     setSelectedCameras((prev) => {
       const newSet = new Set(prev)
       if (newSet.has(id)) {
@@ -41,7 +41,7 @@ export const CameraLayout = () => {
     })
   }
 
-  const handleDeleteClick = (id: number) => {
+  const handleDeleteClick = (id: string) => {
     const camera = cameras.find((c) => c.id === id)
     if (camera) {
       setDeletingCameraId(id)
@@ -67,7 +67,7 @@ export const CameraLayout = () => {
     setDeletingCameraName("")
   }
 
-  const handleStatusChange = async (id: number, newStatus: "Active" | "Inactive") => {
+  const handleStatusChange = async (id: string, newStatus: "Active" | "Inactive") => {
     const camera = cameras.find((c) => c.id === id)
     try {
       await updateStatus(id, newStatus)

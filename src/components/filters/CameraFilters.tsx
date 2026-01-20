@@ -72,8 +72,9 @@ export const CameraFilterBar = ({
           value={statusFilter}
           onChange={onStatusChange}
           options={[
-            { value: "Active", label: "Active" },
-            { value: "Inactive", label: "Inactive" },
+            { value: "active", label: "Active" },
+            { value: "inactive", label: "Inactive" },
+            { value: "maintenance", label: "Maintenance" },
           ]}
           placeholder="Status"
           icon={StatusIcon}

@@ -16,7 +16,7 @@ export const useFilters = (cameras: Camera[]) => {
       const matchesSearch =
         camera.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         camera.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        camera.recorder?.toLowerCase().includes(searchTerm.toLowerCase())
+        camera.model?.toLowerCase().includes(searchTerm.toLowerCase())
 
       const matchesStatus = statusFilter === "all" || camera.status === statusFilter
       const matchesLocation = locationFilter === "all" || camera.location === locationFilter
