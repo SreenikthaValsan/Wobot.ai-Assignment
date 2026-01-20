@@ -26,11 +26,11 @@ export const useCameras = () => {
   }, [fetchCameras])
 
   const updateStatus = useCallback(
-    async (id: number, newStatus: "Active" | "Inactive") => {
+    async (id: string, newStatus: "Active" | "Inactive") => {
       try {
         setUpdatingStatus((prev) => ({ ...prev, [id]: true }))
         await cameraApi.updateCameraStatus(id, newStatus)
-        setCameras((prev) => prev.map((cam) => (cam.id === id ? { ...cam, status: newStatus } : cam)))
+        setCameras((prev) => prev.map((cam) => (cam.id === id ? { ...cam, status: newStatus === "Active" ? "active" : "inactive" } : cam)))
       } catch (err) {
         const errorMsg = err instanceof Error ? err.message : "Unknown error"
         alert(`Error updating status: ${errorMsg}`)

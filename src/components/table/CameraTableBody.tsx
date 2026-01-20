@@ -3,13 +3,13 @@ import { CameraTableRow } from "./CameraTableRow"
 
 interface CameraTableBodyProps {
   cameras: Camera[]
-  selectedCameras: Set<number>
-  onSelectCamera: (id: number) => void
-  onStatusChange: (id: number, newStatus: "Active" | "Inactive") => void
-  onDelete: (id: number) => void
+  selectedCameras: Set<string>
+  onSelectCamera: (id: string) => void
+  onStatusChange: (id: string, newStatus: "Active" | "Inactive") => void
+  onDelete: (id: string) => void
   updatingStatus: UpdatingStatus
-  hoveredRow: number | null
-  onHoverRow: (id: number | null) => void
+  hoveredRow: string | null
+  onHoverRow: (id: string | null) => void
 }
 
 export const CameraTableBody = ({
